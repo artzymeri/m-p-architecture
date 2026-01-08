@@ -38,9 +38,26 @@ export default function Home() {
   const introRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
+  const [assetsLoaded, setAssetsLoaded] = useState(false);
 
-  // Intro animation
+  // Wait for assets to load
   useEffect(() => {
+    const handleLoad = () => {
+      setAssetsLoaded(true);
+    };
+
+    if (document.readyState === "complete") {
+      setAssetsLoaded(true);
+    } else {
+      window.addEventListener("load", handleLoad);
+      return () => window.removeEventListener("load", handleLoad);
+    }
+  }, []);
+
+  // Intro animation - only starts when assets are loaded
+  useEffect(() => {
+    if (!assetsLoaded) return;
+
     const tl = gsap.timeline({
       onComplete: () => {
         setShowIntro(false);
@@ -79,7 +96,7 @@ export default function Home() {
         ease: "power4.inOut",
         delay: 0.5,
       });
-  }, []);
+  }, [assetsLoaded]);
 
   // Main animations
   useEffect(() => {
@@ -99,6 +116,12 @@ export default function Home() {
       });
 
       // Hero text reveal
+      gsap.set(".hero-title .char", { y: 200, opacity: 0, rotateX: -90 });
+      gsap.set(".hero-subtitle", { y: 60, opacity: 0 });
+      gsap.set(".hero-cta", { y: 40, opacity: 0 });
+      gsap.set(".header-logo", { y: -100, opacity: 0 });
+      gsap.set(".nav-item", { y: -30, opacity: 0 });
+
       gsap.fromTo(
         ".hero-title .char",
         { y: 200, opacity: 0, rotateX: -90 },
@@ -324,7 +347,7 @@ export default function Home() {
       {/* Scroll Progress */}
       <div className="scroll-progress scale-x-0" />
 
-      <div ref={containerRef} className="relative">
+      <div ref={containerRef} className={`relative transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         {/* Header */}
         <header className="fixed top-0 left-0 right-0 z-50 glass">
           <div className="container mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
