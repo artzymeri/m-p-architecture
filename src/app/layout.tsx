@@ -18,6 +18,27 @@ export const metadata: Metadata = {
   title: "Margarita Plakolli | Architecture Portfolio",
   description: "Creating spaces that inspire, empower communities, and blend seamlessly with nature through innovative and sustainable design.",
   keywords: ["architecture", "design", "sustainable", "co-housing", "Kosovo", "portfolio"],
+  icons: {
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+      { url: "/icon.png", type: "image/png", sizes: "any" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", type: "image/png" },
+    ],
+  },
+  openGraph: {
+    title: "Margarita Plakolli | Architecture Portfolio",
+    description: "Creating spaces that inspire, empower communities, and blend seamlessly with nature through innovative and sustainable design.",
+    images: ["/logo.png"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Margarita Plakolli | Architecture Portfolio",
+    description: "Creating spaces that inspire, empower communities, and blend seamlessly with nature through innovative and sustainable design.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
@@ -27,9 +48,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="icon" href="/logo.png" type="image/png" />
-      </head>
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} antialiased bg-[#0a0a0a] text-white`}
       >
