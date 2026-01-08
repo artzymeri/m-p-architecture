@@ -605,18 +605,6 @@ export default function Home() {
               >
                 hello@mparchitecture.com
               </a>
-
-              <div className="mt-20 flex flex-wrap justify-center gap-8">
-                {["LinkedIn", "Instagram", "Behance", "Twitter"].map((social) => (
-                  <a
-                    key={social}
-                    href="#"
-                    className="magnetic-button text-white/40 hover:text-[#d4a853] uppercase tracking-wider text-sm transition-colors duration-300"
-                  >
-                    {social}
-                  </a>
-                ))}
-              </div>
             </div>
           </div>
         </section>
@@ -635,9 +623,16 @@ export default function Home() {
                 />
                 <span className="text-white/60 text-sm">© 2024 Margarita Plakolli. All rights reserved.</span>
               </div>
-              <div className="flex items-center gap-6">
-                <a href="#" className="text-white/40 hover:text-[#d4a853] text-sm transition-colors">Privacy Policy</a>
-                <a href="#" className="text-white/40 hover:text-[#d4a853] text-sm transition-colors">Terms of Service</a>
+              <div className="flex items-center gap-2">
+                <span className="text-white/40 text-sm">Made by</span>
+                <a 
+                  href="https://atika.solutions" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#d4a853] hover:text-white text-sm transition-colors font-medium"
+                >
+                  atika.solutions
+                </a>
               </div>
             </div>
           </div>
