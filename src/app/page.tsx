@@ -16,7 +16,7 @@ const projects = [
     description: "A flexible and sustainable building structure using prefabricated modules, designed to nurture the fulfilment of each resident's aspirations.",
     year: "2021",
     category: "Residential",
-    image: "/projects/co-housing/birds-eye.png",
+    image: "/projects/co-housing/birds-eye.jpg",
     slug: "co-housing",
   },
   {

@@ -21,7 +21,7 @@ const sections = [
   {
     id: "birds-eye",
     title: "Bird's Eye Perspective",
-    image: "/projects/co-housing/birds-eye.png",
+    image: "/projects/co-housing/birds-eye.jpg",
   },
   {
     id: "concept",
@@ -167,7 +167,7 @@ export default function CoHousingProject() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/projects/co-housing/birds-eye.png"
+            src="/projects/co-housing/birds-eye.jpg"
             alt={projectData.title}
             fill
             className="object-cover"
@@ -245,7 +245,7 @@ export default function CoHousingProject() {
             <video
               controls
               className="w-full h-full object-cover"
-              poster="/projects/co-housing/birds-eye.png"
+              poster="/projects/co-housing/birds-eye.jpg"
             >
               <source
                 src="/projects/co-housing/3d-visaulization.mp4"
